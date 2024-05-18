@@ -9,6 +9,7 @@ import {
 import { THEME } from "./src/theme";
 import { Loading } from "@components/Loading";
 import { Login } from "@screens/Login";
+import { Register } from "@screens/Register";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,7 +23,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Login /> : <Loading />}
+      {fontsLoaded ? <Register /> : <Loading />}
     </NativeBaseProvider>
   );
 }
