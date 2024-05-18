@@ -1,13 +1,22 @@
-import { Center, Heading, Text } from "native-base";
+import { Center, Heading, ITextProps, Text } from "native-base";
 import LogoSvg from "@assets/logo.svg";
 
-export function Header() {
+type Props = ITextProps & {
+  title: string;
+  subtitle: string;
+  w: number;
+  h: number;
+};
+
+export function Header({ title, subtitle, w, h, ...rest }: Props) {
   return (
     <Center>
-      <LogoSvg />
-      <Heading fontSize="4xl">marketspace</Heading>
+      <LogoSvg width={w} height={h} />
+      <Text fontSize="4xl" fontFamily="heading" {...rest}>
+        {title}
+      </Text>
       <Text color="gray.300" fontSize="sm">
-        Seu espaço de compra e venda
+        {subtitle}
       </Text>
     </Center>
   );
