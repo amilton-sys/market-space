@@ -10,6 +10,12 @@ import { THEME } from "./src/theme";
 import { Loading } from "@components/Loading";
 import { Login } from "@screens/Login";
 import { Register } from "@screens/Register";
+import { Home } from "@screens/Home";
+import { Ads } from "@screens/Ads";
+import { MyAds } from "@screens/MyAds";
+import { AdsCreate } from "@screens/AdsCreate";
+import { AdsVisualization } from "@screens/AdsVisualization";
+import { AdsDetails } from "@screens/AdsDetails";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,7 +29,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Register /> : <Loading />}
+      {fontsLoaded ? <Home /> : <Loading />}
     </NativeBaseProvider>
   );
 }

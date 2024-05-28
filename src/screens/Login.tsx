@@ -26,7 +26,7 @@ export function Login() {
         </Text>
         <Input placeholder="E-mail" />
         <Input placeholder="Senha" isPassword />
-        <Button title="Entrar" />
+        <Button title="Entrar" isBlue />
       </Center>
       <Center p={10}>
         <Text mt={15} mb={4} color="gray.300" fontSize="sm">

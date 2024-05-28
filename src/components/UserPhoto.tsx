@@ -3,8 +3,9 @@ import { PencilSimpleLine } from "phosphor-react-native";
 import {} from "react-native";
 type Props = IImageProps & {
   size: number;
+  isProfile?: boolean;
 };
-export function UserPhoto({ size, ...rest }: Props) {
+export function UserPhoto({ size, isProfile, ...rest }: Props) {
   return (
     <Center mb={15} mt={15}>
       <Image
@@ -15,20 +16,22 @@ export function UserPhoto({ size, ...rest }: Props) {
         borderColor="blue.700"
         {...rest}
       />
-      <Button
-        position="absolute"
-        top={45}
-        left={55}
-        w={10}
-        h={10}
-        bg="blue.700"
-        rounded="full"
-        _pressed={{
-          bg: "blue.500",
-        }}
-      >
-      <Icon as={PencilSimpleLine} color="gray.600" />
-      </Button>
+      {!isProfile && (
+        <Button
+          position="absolute"
+          top={45}
+          left={55}
+          w={10}
+          h={10}
+          bg="blue.700"
+          rounded="full"
+          _pressed={{
+            bg: "blue.500",
+          }}
+        >
+          <Icon as={PencilSimpleLine} color="gray.600" />
+        </Button>
+      )}
     </Center>
   );
 }
